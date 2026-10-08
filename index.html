@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09090f">
+  <title>あっちむいてホイ！</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="game-shell">
+    <header class="hero">
+      <p class="eyebrow">THE FINAL COMPARISON</p>
+      <h1>あっちむいてホイ！</h1>
+      <p class="subtitle">上・下・左・右から一つ選べ。機械と同じ方向を選んで、勝負を決める。</p>
+    </header>
+
+    <section class="scoreboard" aria-label="スコア">
+      <div><span>勝利数</span><strong id="score">0 / 0</strong></div>
+      <div class="machine-result"><span>機械の方向</span><strong id="machine-direction">…</strong></div>
+    </section>
+
+    <section class="battle-card">
+      <div class="battle-header">
+        <span class="live-dot"></span>
+        <p id="status">選択してください</p>
+      </div>
+
+      <div class="choices">
+        <button class="choice choice-up" data-choice="上" type="button">
+          <span class="choice-number">01</span><span class="choice-icon">↑</span>
+          <strong>上</strong><small>自分の選択</small>
+        </button>
+        <button class="choice choice-down" data-choice="下" type="button">
+          <span class="choice-number">02</span><span class="choice-icon">↓</span>
+          <strong>下</strong><small>自分の選択</small>
+        </button>
+        <button class="choice choice-left" data-choice="左" type="button">
+          <span class="choice-number">03</span><span class="choice-icon">←</span>
+          <strong>左</strong><small>自分の選択</small>
+        </button>
+        <button class="choice choice-right" data-choice="右" type="button">
+          <span class="choice-number">04</span><span class="choice-icon">→</span>
+          <strong>右</strong><small>自分の選択</small>
+        </button>
+      </div>
+
+      <div class="result-panel" id="result-panel">
+        <p class="result-kicker">ROUND RESULT</p>
+        <h2 id="result-title">準備完了</h2>
+        <p id="result-copy">上・下・左・右から選んで、機械に勝負を挑ましょう。</p>
+      </div>
+    </section>
+
+    <footer>
+      <button id="play-button" class="play-button" type="button">次の統戦</button>
+      <p>選択後は一回の勝負。次の統戦へ進むには再選択してください。</p>
+    </footer>
+  </main>
+
+  <div id="effect-layer" aria-hidden="true"></div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
